@@ -1,0 +1,321 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Role {
+  id    String @id @default(uuid())
+  role  String @unique
+  users User[]
+}
+
+model User {
+  id       String @id @default(uuid())
+  username String @unique
+  fullname String
+  password String
+  idRole   String
+  role     Role?  @relation(fields: [idRole], references: [id], onDelete: Cascade, onUpdate: Cascade)
+}
+
+model Authentication {
+  token String @unique
+}
+
+model Schema {
+  id       String     @id @default(uuid())
+  schema   String     @unique
+  Assesion Assesion[]
+}
+
+model CertPurpose {
+  id              String            @id @default(uuid())
+  purpose         String
+  certApplication CertApplication[]
+}
+
+model Approval {
+  id              String           @id @default(uuid())
+  date            String?
+  isApproved      Boolean          @default(false)
+  certApplication CertApplication?
+}
+
+model CertApplication {
+  id                  String               @id @default(uuid())
+  tukName             String
+  assesmentDate       String
+  referenceNumber     String
+  receiptDate         String
+  isProcessed         Boolean              @default(false)
+  idCertPurpose       String
+  certPurpose         CertPurpose          @relation(fields: [idCertPurpose], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  idApproval          String               @unique
+  approval            Approval             @relation(fields: [idApproval], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  sptAssesor          SptAssesor?
+  certHolder          CertHolder?
+  blankApplication    BlankApplication?
+  invoiceDist         InvoiceDist?
+  minerbaData         MinerbaData?
+  paymentConfirmation PaymentConfirmation?
+}
+
+model SptAssesor {
+  id                String                   @id @default(uuid())
+  noSptAssesor      String?
+  assesorDate       String?
+  isProcessed       Boolean                  @default(false)
+  idCertApplication String                   @unique
+  certApplication   CertApplication          @relation(fields: [idCertApplication], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  assesmentImpl     AssesmentImplementation?
+}
+
+model AssesmentImplementation {
+  id           String     @id @default(uuid())
+  isProcessed  Boolean    @default(false)
+  idSptAssesor String     @unique
+  sptAssesor   SptAssesor @relation(fields: [idSptAssesor], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  assesions    Assesion[]
+}
+
+model Assesion {
+  id                   String                  @id @default(uuid())
+  lspAdmin             String?
+  assesorLead          String?
+  assesorName          String?
+  assesionNumber       Int                     @default(0)
+  asesorRecommendation String?
+  date                 String?
+  isProcessed          Boolean                 @default(false)
+  idSchema             String?
+  schema               Schema?                 @relation(fields: [idSchema], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  idAssesmentImpl      String
+  assesmentImpl        AssesmentImplementation @relation(fields: [idAssesmentImpl], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  assesmentSchedule    AssesmentSchedule?
+}
+
+model AssesmentSchedule {
+  id          String    @id @default(uuid())
+  schedule    String?
+  isProcessed Boolean   @default(false)
+  idAssesion  String?   @unique
+  assesion    Assesion? @relation(fields: [idAssesion], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  baSk        BaSk?
+}
+
+model BaSk {
+  id                  String             @id @default(uuid())
+  noBaDate            String?
+  noSkDate            String?
+  plenoDate           String?
+  baDate              String?
+  skDate              String?
+  isProcessed         Boolean            @default(false)
+  idAssesmentSchedule String             @unique
+  assesmentSchedule   AssesmentSchedule? @relation(fields: [idAssesmentSchedule], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  assTestResult       AssTestResult?
+}
+
+model AssTestResult {
+  id            String         @id @default(uuid())
+  date          String?
+  isProcessed   Boolean        @default(false)
+  idBaSk        String         @unique
+  baSk          BaSk?          @relation(fields: [idBaSk], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  printAssesion PrintAssesion?
+}
+
+model CertHolder {
+  id                String          @id @default(uuid())
+  certHolder        String?
+  isProcessed       Boolean         @default(false)
+  idCertApplication String          @unique
+  certApplication   CertApplication @relation(fields: [idCertApplication], references: [id], onDelete: Cascade, onUpdate: Cascade)
+}
+
+model BlankApplication {
+  id                String          @id @default(uuid())
+  dateBlank         String?
+  noBlank           String?
+  noHandover        String?
+  dateHandover      String?
+  blankReceiptDate  String?
+  isProcessed       Boolean         @default(false)
+  idCertApplication String          @unique
+  certApplication   CertApplication @relation(fields: [idCertApplication], references: [id], onDelete: Cascade, onUpdate: Cascade)
+}
+
+model InvoiceDist {
+  id                String          @id @default(uuid())
+  invoiceDate       String?
+  isProcessed       Boolean         @default(false)
+  idCertApplication String          @unique
+  certApplication   CertApplication @relation(fields: [idCertApplication], references: [id], onDelete: Cascade, onUpdate: Cascade)
+}
+
+model PrintAssesion {
+  id              String         @id @default(uuid())
+  date            String?
+  isProcessed     Boolean        @default(false)
+  idAssTestResult String         @unique
+  assTestResult   AssTestResult? @relation(fields: [idAssTestResult], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  printBlank      PrintBlank?
+}
+
+model PrintBlank {
+  id                String             @id @default(uuid())
+  date              String?
+  isProcessed       Boolean            @default(false)
+  idPrintAssesion   String             @unique
+  printAssesion     PrintAssesion?     @relation(fields: [idPrintAssesion], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  printCompensation PrintCompensation?
+  directurSign      DirecturSign?
+  certManager       CertManager?
+  certStamp         CertStamp?
+  certScanner       CertScanner?
+  certStorage       CertStorage?
+  systemMiners      SystemMiners?
+}
+
+model PrintCompensation {
+  id           String      @id @default(uuid())
+  date         String?
+  isProcessed  Boolean     @default(false)
+  idPrintBlank String      @unique
+  printBlank   PrintBlank? @relation(fields: [idPrintBlank], references: [id], onDelete: Cascade, onUpdate: Cascade)
+}
+
+model DirecturSign {
+  id           String      @id @default(uuid())
+  date         String?
+  isProcessed  Boolean     @default(false)
+  idPrintBlank String      @unique
+  printBlank   PrintBlank? @relation(fields: [idPrintBlank], references: [id], onDelete: Cascade, onUpdate: Cascade)
+}
+
+model CertManager {
+  id           String      @id @default(uuid())
+  date         String?
+  isProcessed  Boolean     @default(false)
+  idPrintBlank String      @unique
+  printBlank   PrintBlank? @relation(fields: [idPrintBlank], references: [id], onDelete: Cascade, onUpdate: Cascade)
+}
+
+model CertStamp {
+  id           String      @id @default(uuid())
+  date         String?
+  isProcessed  Boolean     @default(false)
+  idPrintBlank String      @unique
+  printBlank   PrintBlank? @relation(fields: [idPrintBlank], references: [id], onDelete: Cascade, onUpdate: Cascade)
+}
+
+model CertScanner {
+  id           String      @id @default(uuid())
+  date         String?
+  isProcessed  Boolean     @default(false)
+  idPrintBlank String      @unique
+  printBlank   PrintBlank? @relation(fields: [idPrintBlank], references: [id], onDelete: Cascade, onUpdate: Cascade)
+}
+
+model CertStorage {
+  id           String      @id @default(uuid())
+  date         String?
+  isProcessed  Boolean     @default(false)
+  idPrintBlank String      @unique
+  printBlank   PrintBlank? @relation(fields: [idPrintBlank], references: [id], onDelete: Cascade, onUpdate: Cascade)
+}
+
+model SystemMiners {
+  id           String       @id @default(uuid())
+  date         String?
+  isProcessed  Boolean      @default(false)
+  idPrintBlank String       @unique
+  printBlank   PrintBlank?  @relation(fields: [idPrintBlank], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  sendCommand  SendCommand?
+}
+
+model PaymentConfirmation {
+  id                String          @id @default(uuid())
+  date              String?
+  proofUrl          String?
+  isProcessed       Boolean         @default(false)
+  idCertApplication String          @unique
+  certApplication   CertApplication @relation(fields: [idCertApplication], references: [id], onDelete: Cascade, onUpdate: Cascade)
+}
+
+model SendCommand {
+  id             String        @id @default(uuid())
+  date           String?
+  isProcessed    Boolean       @default(false)
+  idSystemMiners String        @unique
+  systemMiners   SystemMiners? @relation(fields: [idSystemMiners], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  packing        Packing?
+}
+
+model Packing {
+  id            String       @id @default(uuid())
+  date          String?
+  isProcessed   Boolean      @default(false)
+  idSendCommand String       @unique
+  sendCommand   SendCommand? @relation(fields: [idSendCommand], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  cardDist      CardDist?
+}
+
+model CardDist {
+  id          String    @id @default(uuid())
+  date        String?
+  isProcessed Boolean   @default(false)
+  idPacking   String    @unique
+  packing     Packing?  @relation(fields: [idPacking], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  certDist    CertDist?
+}
+
+model CertDist {
+  id          String    @id @default(uuid())
+  date        String?
+  isProcessed Boolean   @default(false)
+  idCardDist  String    @unique
+  cardDist    CardDist? @relation(fields: [idCardDist], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  receipt     Receipt?
+}
+
+model Receipt {
+  id              String           @id @default(uuid())
+  date            String?
+  isProcessed     Boolean          @default(false)
+  idCertDist      String           @unique
+  certDist        CertDist?        @relation(fields: [idCertDist], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  tukConfirmation TukConfirmation?
+}
+
+model TukConfirmation {
+  id          String   @id @default(uuid())
+  date        String?
+  description String?
+  isProcessed Boolean  @default(false)
+  idReceipt   String   @unique
+  receipt     Receipt? @relation(fields: [idReceipt], references: [id], onDelete: Cascade, onUpdate: Cascade)
+}
+
+model MinerbaData {
+  id                String          @id @default(uuid())
+  no                String?
+  date              String?
+  isProcessed       Boolean         @default(false)
+  idCertApplication String          @unique
+  certApplication   CertApplication @relation(fields: [idCertApplication], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  minerbaDist       MinerbaDist?
+}
+
+model MinerbaDist {
+  id            String      @id @default(uuid())
+  no            String?
+  date          String?
+  isProcessed   Boolean     @default(false)
+  idMinerbaData String      @unique
+  minerbaData   MinerbaData @relation(fields: [idMinerbaData], references: [id], onDelete: Cascade, onUpdate: Cascade)
+}

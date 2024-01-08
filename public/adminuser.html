@@ -1,0 +1,102 @@
+<form
+    id="form"
+    action="#"
+    method="post"
+>
+    <div class="card position-relative">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">User Information</h6>
+        </div>
+        <div class="card-body">
+            <form id="userForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="username"
+                        name="username"
+                        required
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="fullName"
+                        name="fullName"
+                        required
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        name="password"
+                        required
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="roles">Roles</label>
+                    <select
+                        class="form-control"
+                        id="roles"
+                        name="roles"
+                    >
+                        <option
+                            value=""
+                            disabled
+                            selected
+                        >
+                            Pilih role ...
+                        </option>
+                    </select>
+                </div>
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+</form>
+<p></p>
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Data User</h1>
+</div>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">User</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table
+                class="table table-bordered"
+                id="dataTable"
+                width="100%"
+                cellspacing="0"
+            >
+                <thead>
+                    <tr>
+                        <th scope="col">User Name</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Role</th>
+                        <th
+                            id="action"
+                            scope="col"
+                            style="width: 10%"
+                        >
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>

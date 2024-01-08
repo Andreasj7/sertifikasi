@@ -1,0 +1,59 @@
+<!-- Content Body -->
+<div class="container mt-5">
+    <h2 class="mt-5">Input Tanggal Permohonan</h2>
+    <form id="editForm">
+        <div class="form-group row">
+            <label for="nama_tuk" class="col-sm-2 col-form-label">Nama TUK/Provider</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="nama_tuk" name="nama_tuk" value="" readonly />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="tujuan_sertifikasi" class="col-sm-2 col-form-label">Tujuan Sertifikasi</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="tujuan_sertifikasi" name="tujuan_sertifikasi" value=" " readonly />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="no_blanko" class="col-sm-2 col-form-label">No & Tgl Surat Permohonan Blanko</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="no_blanko" name="no_blanko" value="" placeholder="No" />
+            </div>
+            <div class="col-sm-5">
+                <input type="date" class="form-control" id="tgl_blanko" name="tgl_blanko" value="" placeholder="Tgl" />
+            </div>
+        </div>
+        
+        <div class="form-group row">
+            <label for="noba_serah_blanko" class="col-sm-2 col-form-label">No & Tgl BA Serah Terima Blanko BNSP</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="no_ba_serah_blanko" name="no_ba_serah_blanko" value="" placeholder="No" />
+            </div>
+            <div class="col-sm-5">
+                <input type="date" class="form-control" id="tgl_ba_serah_blanko" name="tgl_ba_serah_blanko" value="" placeholder="Tgl" />
+            </div>
+        </div>
+        
+        <div class="form-group row">
+            <label for="tgl_terima_blanko" class="col-sm-2 col-form-label">Tgl Terima Blanko BNSP</label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control" id="tgl_terima_blanko" name="data_sertifikasi" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="pengerjaan" class="col-sm-2 col-form-label">Pengisian Tgl Sertifikat</label>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input type="checkbox" id="pengerjaan" name="pengerjaan" class="form-check-input" />
+                    <label for="pengerjaan" class="form-check-label">Berhasil</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10 offset-sm-2">
+                <button id="submit" type="submit" class="btn btn-primary">Simpan</button>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- End body content -->

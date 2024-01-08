@@ -1,0 +1,48 @@
+<form>
+    <div class="card position-relative">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">User Information</h6>
+        </div>
+        <div class="card-body">
+            <form id="userForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="username"
+                        name="username"
+                        readonly
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="fullName"
+                        name="fullName"
+                        readonly
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="password">New Password</label>
+                    <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        name="password"
+                        required
+                    />
+                </div>
+                <button
+                    id="submit"
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+</form>

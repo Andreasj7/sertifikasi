@@ -1,0 +1,80 @@
+<div class="container mt-5">
+    <h2 class="mt-5">Form Input Data Pendistribusian Invoice</h2>
+    <form>
+        <!-- Input Nama TUK/Provider -->
+        <div class="form-group">
+            <label for="nama_tuk">Nama TUK/Provider:</label>
+            <input
+                type="text"
+                class="form-control"
+                id="nama_tuk"
+                name="nama_tuk"
+                value=""
+                readonly
+            />
+        </div>
+
+        <!-- Input Jadwal Assessment BNSP -->
+        <div class="form-group">
+            <label for="tujua_sertif">Tujun Sertifikasi:</label>
+            <input
+                type="text"
+                class="form-control"
+                id="tujua_sertif"
+                name="tujua_sertif"
+                readonly
+            />
+        </div>
+
+        <!-- Input Nomor Surat Permohonan -->
+        <div class="form-group">
+            <label for="nomor_surat_permohonan">Nomor Surat Permohonan:</label>
+            <input
+                type="text"
+                class="form-control"
+                id="nomor_surat_permohonan"
+                name="nomor_surat_permohonan"
+                readonly
+            />
+        </div>
+
+        <!-- Input Nomor Surat Permohonan -->
+        <div class="form-group">
+            <label for="pendistribusian_invoice">Pendistribusian Invoice:</label>
+            <input
+                type="date"
+                class="form-control"
+                id="pendistribusian_invoice"
+                name="pendistribusian_invoice"
+                required
+            />
+        </div>
+
+        <!-- Checkbox Keberhasilan -->
+        <div class="form-group">
+            <label for="berhasil">Status Pendistribusian Invoice:</label>
+            <div class="form-check">
+                <input
+                    type="checkbox"
+                    id="berhasil"
+                    name="berhasil"
+                    class="form-check-input"
+                />
+                <label
+                    for="berhasil"
+                    class="form-check-label"
+                    >Berhasil</label
+                >
+            </div>
+        </div>
+
+        <!-- Tombol Submit -->
+        <button
+            id="submit"
+            type="submit"
+            class="btn btn-primary"
+        >
+            Submit
+        </button>
+    </form>
+</div>

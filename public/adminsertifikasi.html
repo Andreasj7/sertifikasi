@@ -1,0 +1,58 @@
+<form
+        id="form"
+        action="#"
+        method="post"
+>
+<div class="card position-relative">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Input Tujuan Sertifikasi</h6>
+    </div>
+    <div class="card-body">
+        <form id="skemaForm">
+            <div class="form-group">
+                <label for="sertifname">Input Tujuan Sertifikasi</label>
+                <input type="text" class="form-control" id="sertifname" name="sertifname" required>
+            </div>
+            <div class="form-group">
+                <label for="sertifType">Jenis Tujuan Sertifikasi</label>
+                <select class="form-control" id="sertifType" name="sertifType" >
+                    <option
+                    value=""
+                    disabled
+                    selected
+                >
+                    list Tujuan Sertifikasi...
+                </option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+</form><p></p>
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Data Daftar Tujuan Sertifikasi</h1>
+</div>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Daftar Tujuan Sertifikasi</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th scope="col">Jenis Tujuan Sertifikasi</th>
+                        <th id="action"
+                        scope="col"
+                        style="width: 10%">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

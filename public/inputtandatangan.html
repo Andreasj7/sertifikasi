@@ -1,0 +1,115 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Input Tanda Tangan</h1>
+    </div>
+</div>
+<!-- Content Body -->
+<div class="container mt-5">
+    <form
+        id="form"
+        action="#"
+        method="post"
+    >
+        <div class="form-group row">
+            <label
+                for="nama_tuk"
+                class="col-sm-2 col-form-label"
+                >Nama TUK/Provider</label
+            >
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    class="form-control"
+                    id="nama_tuk"
+                    name="nama_tuk"
+                    readonly
+                />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label
+                for="no_surat"
+                class="col-sm-2 col-form-label"
+                >No Surat Permohonan</label
+            >
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    class="form-control"
+                    id="no_surat"
+                    name="no_surat"
+                    readonly
+                />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label
+                for="tujuan_sertifikasi"
+                class="col-sm-2 col-form-label"
+                >Tujuan Sertifikasi</label
+            >
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    class="form-control"
+                    id="tujuan_sertifikasi"
+                    name="tujuan_sertifikasi"
+                    readonly
+                />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label
+                for="jenis_skema"
+                class="col-sm-2 col-form-label"
+                >Jenis Skema</label
+            >
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    class="form-control"
+                    id="jenis_skema"
+                    name="jenis_skema"
+                    readonly
+                />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label
+                for="tanda_tangan"
+                class="col-sm-2 col-form-label"
+                >Tanda Tangan Direktur</label
+            >
+            <div class="col-sm-10">
+                <input
+                    type="date"
+                    class="form-control"
+                    id="tanda_tangan"
+                    name="tanda_tangan"
+                    required
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="berhasil">Status Tanda Tangan</label>
+            <div class="form-check">
+                <input type="checkbox" id="berhasil" name="berhasil" class="form-check-input" value="false">
+                <label for="berhasil" class="form-check-label">Berhasil</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10 offset-sm-2">
+                <button
+                    id="submit"
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Submit
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+<!--  -->

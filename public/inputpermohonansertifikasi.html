@@ -1,0 +1,114 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Input Permohonan Sertifikasi</h1>
+    </div>
+</div>
+<!-- Content Body -->
+<div class="container mt-5">
+    <form
+        id="form"
+        action="#"
+        method="post"
+    >
+        <div class="form-group row">
+            <label
+                for="nama_tuk"
+                class="col-sm-2 col-form-label"
+                >Nama TUK/Provider</label
+            >
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    class="form-control"
+                    id="nama_tuk"
+                    name="nama_tuk"
+                    required
+                />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label
+                for="tanggal_uji"
+                class="col-sm-2 col-form-label"
+                >Tanggal Uji Kompetensi</label
+            >
+            <div class="col-sm-10">
+                <input
+                    type="date"
+                    class="form-control"
+                    id="tanggal_uji"
+                    name="tanggal_uji"
+                    required
+                />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label
+                for="no_surat"
+                class="col-sm-2 col-form-label"
+                >No Surat Permohonan</label
+            >
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    class="form-control"
+                    id="no_surat"
+                    name="no_surat"
+                    required
+                />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label
+                for="tanggal_terima"
+                class="col-sm-2 col-form-label"
+                >Tanggal Terima Surat</label
+            >
+            <div class="col-sm-10">
+                <input
+                    type="date"
+                    class="form-control"
+                    id="tanggal_terima"
+                    name="tanggal_terima"
+                    required
+                />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label
+                for="tujuan_sertifikasi"
+                class="col-sm-2 col-form-label"
+                >Tujuan Sertifikasi</label
+            >
+            <div class="col-sm-10">
+                <select
+                    class="form-control"
+                    id="tujuan_sertifikasi"
+                    name="tujuan_sertifikasi"
+                    required
+                >
+                    <option
+                        value=""
+                        disabled
+                        selected
+                    >
+                        Pilih tujuan sertifikasi...
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10 offset-sm-2">
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Submit
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+<!--  -->

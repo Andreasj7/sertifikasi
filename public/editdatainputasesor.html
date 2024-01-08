@@ -1,0 +1,122 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">
+            Input Pelaksanaan Assesment/Uji Kompetensi
+        </h1>
+    </div>
+</div>
+<!-- Content Body -->
+<div class="container mt-5">
+    <h2 class="mt-5">No & Tanggal SPT Asesor</h2>
+    <form id="editForm">
+        <div class="form-group row">
+            <label
+                for="nama_tuk"
+                class="col-sm-2 col-form-label"
+                >Nama TUK/Provider</label
+            >
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    class="form-control"
+                    id="nama_tuk"
+                    name="nama_tuk"
+                    value="Contoh TUK"
+                    readonly
+                />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label
+                for="no_spt_assesor"
+                class="col-sm-2 col-form-label"
+                >No SPT Asesor</label
+            >
+            <div class="col-sm-10">
+                <input
+                    type="text"
+                    class="form-control"
+                    id="no_spt_assesor"
+                    name="no_spt_assesor"
+                    value="1162"
+                    readonly
+                />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label
+                for="tgl_spt_assesor"
+                class="col-sm-2 col-form-label"
+                >Tanggal SPT Asesor</label
+            >
+            <div class="col-sm-10">
+                <input
+                    type="date"
+                    class="form-control"
+                    id="tgl_spt_assesor"
+                    name="tgl_spt_assesor"
+                    readonly
+                />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label
+                for="pengerjaan_spt_assesor"
+                class="col-sm-2 col-form-label"
+                >Pengisian No & Tgl SPT</label
+            >
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input
+                        type="checkbox"
+                        id="pengerjaan_spt_assesor"
+                        name="pengerjaan_spt_assesor"
+                        class="form-check-input"
+                        disabled
+                    />
+                    <label
+                        for="pengerjaan_spt_assesor"
+                        class="form-check-label"
+                        >Berhasil</label
+                    >
+                </div>
+            </div>
+        </div>
+
+        <div id="form-container"></div>
+
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input
+                        type="checkbox"
+                        id="pengerjaan"
+                        name="pengerjaan"
+                        class="form-check-input"
+                    />
+                    <label
+                        for="pengerjaan"
+                        class="form-check-label"
+                        >Berhasil</label
+                    >
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-10 offset-sm-2">
+                <button
+                    id="submit"
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Simpan
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

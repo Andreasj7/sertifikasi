@@ -1,0 +1,114 @@
+<div class="container mt-5">
+    <h2 class="mt-5">Form Input Data BA & SK</h2>
+    <form>
+        <!-- Input Nama TUK/Provider -->
+        <div class="form-group">
+            <label for="nama_tuk">Nama TUK/Provider:</label>
+            <input
+                type="text"
+                class="form-control"
+                id="nama_tuk"
+                name="nama_tuk"
+                value="Ranah Perkasa Energi"
+                readonly
+            />
+        </div>
+
+        <!-- Input Jadwal Assessment BNSP -->
+        <div class="form-group">
+            <label for="jadwal_assessment_bnsp">Jadwal Assessment BNSP:</label>
+            <input
+                type="text"
+                class="form-control"
+                id="jadwal_assessment_bnsp"
+                name="jadwal_assessment_bnsp"
+                value="BNSP.UJK.202310060058"
+                readonly
+            />
+        </div>
+
+        <!-- Input No. & Tgl. BA -->
+        <div class="form-group">
+            <label for="no_tgl_ba">No. & Tgl. BA:</label>
+            <input
+                type="text"
+                class="form-control"
+                id="no_tgl_ba"
+                name="no_tgl_ba"
+                required
+            />
+        </div>
+
+        <!-- Input No. & Tgl. SK -->
+        <div class="form-group">
+            <label for="no_tgl_sk">No. & Tgl. SK:</label>
+            <input
+                type="text"
+                class="form-control"
+                id="no_tgl_sk"
+                name="no_tgl_sk"
+                required
+            />
+        </div>
+
+        <!-- Input Tanggal SK/Pleno -->
+        <div class="form-group">
+            <label for="tgl_pleno_sk">Tanggal SK/Pleno:</label>
+            <input
+                type="date"
+                class="form-control"
+                id="tgl_pleno_sk"
+                name="tgl_pleno_sk"
+            />
+        </div>
+
+        <!-- Input Tanggal Pembuatan BA -->
+        <div class="form-group">
+            <label for="tgl_pembuatan_ba">Tanggal Pembuatan BA:</label>
+            <input
+                type="date"
+                class="form-control"
+                id="tgl_pembuatan_ba"
+                name="tgl_pembuatan_ba"
+            />
+        </div>
+
+        <!-- Input Tanggal Pembuatan SK -->
+        <div class="form-group">
+            <label for="tgl_pembuatan_sk">Tanggal Pembuatan SK:</label>
+            <input
+                type="date"
+                class="form-control"
+                id="tgl_pembuatan_sk"
+                name="tgl_pembuatan_sk"
+            />
+        </div>
+
+        <!-- Input Pengisian BA & SK -->
+        <div class="form-group">
+            <label for="pengisian_ba_sk">Pengisian BA & SK:</label>
+            <div class="form-check">
+                <input
+                    type="checkbox"
+                    id="pengisian_ba_sk"
+                    name="pengisian_ba_sk"
+                    class="form-check-input"
+                />
+                <label
+                    for="pengisian_ba_sk"
+                    class="form-check-label"
+                    >Berhasil</label
+                >
+            </div>
+        </div>
+
+        <!-- Tombol Submit -->
+        <button
+            id="submit"
+            type="submit"
+            class="btn btn-primary"
+        >
+            Submit
+        </button>
+    </form>
+</div>

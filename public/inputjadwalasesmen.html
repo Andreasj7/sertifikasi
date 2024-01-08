@@ -1,0 +1,99 @@
+<!-- Content Body -->
+<div class="container mt-5">
+    <h2 class="mt-5">Form Input Jadwal Asesmen</h2>
+    <form>
+        <!-- Input Nama TUK/Provider -->
+        <div class="form-group">
+            <label for="nama_tuk">Nama TUK/Provider:</label>
+            <input
+                type="text"
+                class="form-control"
+                id="nama_tuk"
+                name="nama_tuk"
+                value="Ranah Perkasa Energi"
+                readonly
+            />
+        </div>
+
+        <!-- Input Pengisian Data Asesi -->
+        <div class="form-group">
+            <label for="pengisian_data_asesi">Status Data Asesi:</label>
+            <div class="form-check">
+                <input
+                    type="checkbox"
+                    id="pengisian_data_asesi"
+                    name="pengisian_data_asesi"
+                    class="form-check-input"
+                    disabled
+                />
+                <label
+                    for="pengisian_data_asesi"
+                    class="form-check-label"
+                    >Berhasil</label
+                >
+            </div>
+        </div>
+
+        <!-- Input Status Data Tanggal Asesi -->
+        <div class="form-group">
+            <label for="status_tanggal_asesi"
+                >Pengisian Data Tanggal Asesi:</label
+            >
+            <input
+                type="date"
+                class="form-control"
+                id="status_tanggal_asesi"
+                name="status_tanggal_asesi"
+                value="2023-12-20"
+                readonly
+            />
+        </div>
+
+        <!-- Input Pengisian Jadwal Asesmen -->
+        <div class="form-group">
+            <div class="form-group">
+                <label for="pengisian_jadwal_asesmen"
+                    >Pengisian Jadwal Asesmen:</label
+                >
+                <input
+                    type="text"
+                    id="pengisian_jadwal_asesmen"
+                    name="pengisian_jadwal_asesmen"
+                    class="form-control"
+                />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label
+                for="pengerjaan"
+                class="col-sm-2 col-form-label"
+                >Pengisian Jadwal Asesmen</label
+            >
+            <div class="col-sm-2">
+                <div class="form-check">
+                    <input
+                        type="checkbox"
+                        id="pengerjaan"
+                        name="pengerjaan"
+                        class="form-check-input"
+                    />
+                    <label
+                        for="pengerjaan"
+                        class="form-check-label"
+                        >Berhasil</label
+                    >
+                </div>
+            </div>
+        </div>
+
+        <!-- Tombol Submit -->
+        <button
+            id="submit"
+            type="submit"
+            class="btn btn-primary"
+        >
+            Submit
+        </button>
+    </form>
+</div>
